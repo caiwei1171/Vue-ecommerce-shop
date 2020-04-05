@@ -16,8 +16,13 @@ const service = axios.create({
 
 // let loadding;
 
+// 引入要使用的nprogress
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 // axios请求拦截,前端发起请求之前拦截
 service.interceptors.request.use(config => {
+    // 在request拦截器中显示进度条NProgress.start(); 
+    NProgress.start();
     if(sessionStorage.getItem("token")){
         config.headers['Authorization'] = sessionStorage.getItem("token");
     }
@@ -50,8 +55,9 @@ service.interceptors.request.use(config => {
 })
 
 // axios响应拦截,后端返回响应后拦截
-service.interceptors.response.use(
-  response => {
+service.interceptors.response.use(response => {
+    // 在response拦截器中隐藏进度条 NProgress.done();
+    NProgress.done();
     // loadding.close();
     // const res = response.data;
     // if (res.code == 40000) {

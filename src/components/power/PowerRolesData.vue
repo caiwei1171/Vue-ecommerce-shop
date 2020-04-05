@@ -3,55 +3,6 @@
         <el-table :data="rolelist" border stripe>
             <!-- 展开列 -->
             <power-roles-expand></power-roles-expand>
-            <!-- <el-table-column type="expand">  
-                <template slot-scope="scope"> -->
-                    <!-- 渲染 各项 顶部底部的水平线样式 -->
-                    <!-- <el-row 
-                        :class="['bdbottom',i1 === 0 ? 'bdtop' : '','vcenter']" 
-                        v-for="(item1,i1) in scope.row.children" 
-                        :key="item1.id"> -->
-                        <!-- 渲染一级权限 :span="5"表示占5列 -->
-                        <!-- <el-col :span="5">
-                            <el-tag 
-                                closable 
-                                @close="removeRightById(scope.row,item1.id)">
-                                {{item1.authName}}
-                            </el-tag>
-                            <i class="el-icon-caret-right"></i>
-                        </el-col> -->
-                        <!-- 渲染二级三级权限 -->
-                        <!-- <el-col :span="19"> -->
-                            <!-- 通过for循环 嵌套 渲染二级权限 -->
-                            <!-- <el-row 
-                                :class="[i2 === 0 ? '' : 'bdtop','vcenter']" 
-                                v-for="(item2,i2) in item1.children" 
-                                :key="item2.id"> -->
-                                <!-- 栅格系统 -->
-                                <!-- <el-col :span="6">
-                                    <el-tag 
-                                        type="success" 
-                                        closable 
-                                        @close="removeRightById(scope.row,item2.id)">
-                                        {{item2.authName}}
-                                    </el-tag>
-                                    <i class="el-icon-caret-right"></i>
-                                </el-col> -->
-                                <!-- 三级权限 closable:为标签添加删除的样式 -->
-                                <!-- <el-col :span="18">
-                                    <el-tag 
-                                        :class="[i3 === 0 ? '' : 'bdtop']" 
-                                        type="warning" v-for="(item3,i3) in item2.children" 
-                                        :key="item3.id" 
-                                        closable 
-                                        @close="removeRightById(scope.row,item3.id)">
-                                        {{item3.authName}}
-                                    </el-tag>
-                                </el-col>
-                            </el-row>
-                        </el-col>
-                    </el-row>
-                </template>
-            </el-table-column>  -->
             <!-- 索引列 -->
             <el-table-column type="index" label="#"></el-table-column>
             <el-table-column label="角色名称" prop="roleName"></el-table-column>

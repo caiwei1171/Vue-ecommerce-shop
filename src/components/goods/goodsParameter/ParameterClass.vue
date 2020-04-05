@@ -189,7 +189,6 @@ export default {
                     item.inputVisible = false//按钮与文本框的显示切换
                     item.inputValue = ""//文本框输入的内容
                 })
-                console.log(res.data)
                 if(this.activeName == "many"){
                     this.manyTableData = res.data;
                 }else{
