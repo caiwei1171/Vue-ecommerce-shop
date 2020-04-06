@@ -66,7 +66,7 @@ export default {
         this.getOrderList();
     },
     methods:{
-        // 获取用户传递过来的数据
+        // 获取订单的数据
         getOrderList(){
             commentGetApi.commentGet(`orders`,this.parameter).then((res) => {
                 if(res.meta.status !== 200){

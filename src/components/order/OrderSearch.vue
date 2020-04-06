@@ -11,8 +11,8 @@
                     class="input-with-select" 
                     v-model="parameter.query" 
                     clearable 
-                    @clear="getUserList">
-                    <el-button slot="append" icon="el-icon-search" @click="getUserList"></el-button>
+                    @clear="getOrderList">
+                    <el-button slot="append" icon="el-icon-search" @click="getOrderList"></el-button>
                 </el-input>
             </el-col>
         </el-row> 
@@ -20,8 +20,7 @@
 </template>
 
 <script>
-// 引入连接兄弟组件的桥梁
-import Bus from "@/components/Bus.js"
+
 export default {
     name:"OrderSearch",
     props:{
@@ -32,17 +31,9 @@ export default {
             }
         }
     },
-    data(){
-        return {
-            isShow:true
-        }
-    },
     methods:{
-        getUserList(){
-            this.$emit('getUserList');
-        },
-        addDialogVisible(){
-            Bus.$emit("addDialogVisible",this.isShow);
+        getOrderList(){
+            this.$emit('getOrderList');
         }
     }
 }
